@@ -1,6 +1,6 @@
 ---
 - hosts: webservers 
-  become: True
+  become: yes
   tasks:
     - name: Install packages
       apt:
@@ -10,7 +10,7 @@
       service:
         name: httpd
         state: started
-        enabled: True
+        enabled: yes
     - name: Deploy static website
       copy:
         src: index.html
